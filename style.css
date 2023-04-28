@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    font: bold15px arial,sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 2% 10%;
+    gap: 10px;
+}
+
+.operacoes > .enderecos{
+    display: flex;
+    gap: 2px;
+}
+
+.display_enderecos {
+    display: flex;
+}
+
+ul > li{
+    padding: 10px;
+    list-style: none;
+    padding: 15px 30px;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 30%;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+}
+
+
+.operacoes {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.enderecos {
+    justify-content: space-around;
+    height: 250px;
+}
+
+.display_enderecos {
+    padding-top: 20px;
+    justify-content: space-around;
+    height: 70px;
+}
+
+button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+.bloco_operacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 66%;
+}
+
+.bloco_operacoes > .title_bloco {
+    padding: 10px;
+}
+
+.display_operacoes {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 40%;
+    height: 30px;
+}
