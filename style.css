@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    font: bold15px arial,sans-serif;
 }
 
 body {
@@ -9,15 +8,6 @@ body {
     justify-content: center;
     margin: 2% 10%;
     gap: 10px;
-}
-
-.operacoes > .enderecos{
-    display: flex;
-    gap: 2px;
-}
-
-.display_enderecos {
-    display: flex;
 }
 
 ul > li{
@@ -31,6 +21,8 @@ ul > li{
     flex-direction: column;
     gap: 2rem;
     width: 30%;
+    align-items: center;
+    justify-content: center;
 }
 
 .actions {
@@ -52,13 +44,16 @@ ul > li{
 }
 
 .enderecos {
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
     height: 250px;
 }
 
 .display_enderecos {
-    padding-top: 20px;
+    display: flex;
+    margin: 10px 0px;
     justify-content: space-around;
+    align-items: center;
     height: 70px;
 }
 
@@ -77,17 +72,57 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 66%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .bloco_operacoes > .title_bloco {
     padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .display_operacoes {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 40%;
+    /* gap: 40%; */
     height: 30px;
+    border: 1px solid black;
+    height: 300px;
+}
+
+.enderecos > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
+div.resultado_operacoes, div.seletor_operacoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.progress_bar {
+    background-color: dimgray;
+    border: 1px solid black;
+}
+
+.operacoes, .infos {
+    border: 1px solid black;
+}
+
+.display_enderecos > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display_operacoes > div {
+    border: 1px solid black;
 }
