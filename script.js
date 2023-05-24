@@ -1,82 +1,38 @@
-class Barramentos {
+const setupInitial = () => {
+    //iniciando todos os inputs
+    var inputs = document.querySelectorAll('.input_r > ul > li > input')
 
-    barramentoA = 0
-    barramentoB = 0
-    barramentoC = 0
-//get a
-    get barramentoA() {
-        return this.barramentoA
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].value = 0 
     }
-
-	setBarramentoA(barramentoA) {
-		this.barramentoA = barramentoA
-	}
-//get b
-	get barramentoB() {
-		return this.barramentoB
-	}
-
-	setBarramentoB(barramentoB) {
-		this.barramentoB = barramentoB
-	}
-//get c
-	get barramentoC() {
-		return this.barramentoC
-	}
-
-	setBarramentoC(barramentoC) {
-		this.barramentoC = barramentoC
-	}
-//retorna todos os valores
-	getValues() {
-		return `Barramento A: ${this.barramentoA}\nBarramento B: ${this.barramentoB}\nBarramento C: ${this.barramentoC}`
-	}
-
 }
 
-class Memoria {
+const exec = () => {
+    let input1 = document.querySelectorAll('#input__r0').value
+    let input2 = document.querySelectorAll('#input__r1').value
     
-    memoria = []
+}
 
-    registrar(n) {
-        this.memoria.push(n)
-    }
+const updateCheck = () => {
+    let checks = document.querySelectorAll('[type=checkbox]')
+    var verificador = false
 
-    get tamanhoMemoria() {
-        return this.memoria.length
-    }
-
-    getMemoriaLocal(local) {//consertar
-        return this.memoria[local]
-    }
-
-    getAllMemoria() {//consertar
-        for (i = 0; i < this.memoria.length; i++) {
-            return `Local da memória ${i + 701}: ${getMemoriaLocal(i)}`
+    for (i = 0; i < checks.length; i++) {
+        if (checks[i].checked) {
+            verificador = true
+            break
         }
     }
 
+    if (verificador) {
+        for (i = 0; i < checks.length; i++) {
+            if (!checks[i].checked) {
+                checks[i].setAttribute('disabled','')
+            }
+        }
+    } else {
+        for (i = 0; i < checks.length; i++) {
+            checks[i].removeAttribute('disabled')
+        }
+    }
 }
-
-class Registradores {
-    registradores = []
-
-    registrarVazio(n) {
-        this.registradores.push(n)
-    }
-
-    registrarNovo(n, i) {
-        this.registradores[i] = n
-    }
-
-    getRegistrador(i) {
-        return this.registradores[i]
-    }
-
-    getArraySize() {
-        return this.registradores.length
-    }
-
-    //falta imprimir
-}
-

@@ -6,32 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="setupInitial()">
     <div class="infos">
         <div class="input_r">
             <ul>
                 <li>
                     R0
-                    <input type="number">
+                    <input type="number" id="input__r0">
                 </li>
                 <li>
                     R1
-                    <input type="number">
+                    <input type="number" id="input__r1">
                 </li>
                 <li>
                     R2
-                    <input type="number">
+                    <input type="number" id="input__r2">
                 </li>
                 <li>
                     R3
-                    <input type="number">
+                    <input type="number" id="input__r3">
                 </li>
             </ul>
         </div>
         <div class="actions">
-            <button>Executar</button>
-            <button>Pausar</button>
+            <button id="button__executar" onclick="exec()">Executar</button>
+            <button id="pausar">Pausar</button>
         </div>
         <div class="progress">
             <input type="text" class="progress_bar">
@@ -77,7 +78,44 @@
                     <input type="text">
                 </div>
                 <div class="seletor_operacoes">
-                    CHAVINHA AQUI
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="" id="mais" onclick="updateCheck()">
+                            <span>
+                                +
+                            </span>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="menos" onclick="updateCheck()">
+                            <span>
+                                -
+                            </span>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="vezes" onclick="updateCheck()">
+                            <span>
+                                *
+                            </span>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="dividir" onclick="updateCheck()">
+                            <span>
+                                /
+                            </span>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="exponencial" onclick="updateCheck()">
+                            <span>
+                                ^
+                            </span>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" id="resto" onclick="updateCheck()">
+                            <span>
+                                %
+                            </span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
