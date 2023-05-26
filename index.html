@@ -1,122 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Simulador de CPU</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="setupInitial()">
-    <div class="infos">
-        <div class="input_r">
-            <ul>
-                <li>
+<body onload="start()">
+    <div class="main">
+        <div class="inputs_values">
+            <div class="input__r">
+                <span class="span__r0">
                     R0
-                    <input type="number" id="input__r0">
-                </li>
-                <li>
+                </span>
+                <input type="number" name="r0" id="inp0">
+            </div>
+            <div class="input__r">
+                <span class="span__r1">
                     R1
-                    <input type="number" id="input__r1">
-                </li>
-                <li>
+                </span>
+                <input type="number" name="" id="inp1">
+            </div>
+            <div class="input__r">
+                <span class="span__r2">
                     R2
-                    <input type="number" id="input__r2">
-                </li>
-                <li>
+                </span>
+                <input type="number" name="" id="inp2" disabled>
+            </div>
+            <div class="input__r">
+                <span class="span__r3">
                     R3
-                    <input type="number" id="input__r3">
-                </li>
-            </ul>
+                </span>
+                <input type="number" name="" id="inp3" disabled>
+            </div>
         </div>
-        <div class="actions">
-            <button id="button__executar" onclick="exec()">Executar</button>
-            <button id="pausar">Pausar</button>
-        </div>
-        <div class="progress">
-            <input type="text" class="progress_bar">
+        <div class="buttons">
+            <div class="exec">
+                <button class="btn__exec" onclick="mainProgram()">Executar</button>
+            </div>
+            <div class="pause">
+                <button class="btn__exec">Pausar</button>
+            </div>
         </div>
     </div>
-    <div class="operacoes">
-        <div class="enderecos">
-            <div class="end_a">
-                <span>
-                    Endereço A
-                </span> 
+    <div class="process">
+        <div class="bus">
+            <div class="bus__input">
+                <div class="bus__A">
+                    <h3>Bus A</h3>
+                    <div class="bus__optionsA">
+                        <div class="option">
+                            <span>R0</span>
+                            <input type="checkbox" name="" id="busA0" onclick="verifyBusA()">
+                        </div>
+                        <div class="option">
+                            <span>R1</span>
+                            <input type="checkbox" name="" id="busA1" onclick="verifyBusA()">
+                        </div>
+                        <div class="option">
+                            <span>R2</span>
+                            <input type="checkbox" name="" id="busA2" onclick="verifyBusA()">
+                        </div>
+                        <div class="option">
+                            <span>R3</span>
+                            <input type="checkbox" name="" id="busA3" onclick="verifyBusA()">
+                        </div>
+                    </div>
+                </div>
+                <div class="bus__B">
+                    <h3>Bus B</h3>
+                    <div class="bus__optionsB">
+                        <div class="option">
+                            <span>R0</span>
+                            <input type="checkbox" name="" id="busB0" onclick="verifyBusB()">
+                        </div>
+                        <div class="option">
+                            <span>R1</span>
+                            <input type="checkbox" name="" id="busB1" onclick="verifyBusB()">
+                        </div>
+                        <div class="option">
+                            <span>R2</span>
+                            <input type="checkbox" name="" id="busB2" onclick="verifyBusB()">
+                        </div>
+                        <div class="option">
+                            <span>R3</span>
+                            <input type="checkbox" name="" id="busB3" onclick="verifyBusB()">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="end_b">
-                <span>
-                    Endereço B
-                </span>
-            </div>
-            <div class="end_c">
-                <span>
-                    Endereço C
-                </span>
+            <div class="bus__output">
+                <div class="bus__c">
+                    <h3>Bus C</h3>
+                    <div class="bus__optionsC">
+                        <div class="option">
+                            <span>R0</span>
+                            <input type="checkbox" name="" id="busC0" onclick="verifyBusC()">
+                        </div>
+                        <div class="option">
+                            <span>R1</span>
+                            <input type="checkbox" name="" id="busC1" onclick="verifyBusC()">
+                        </div>
+                        <div class="option">
+                            <span>R2</span>
+                            <input type="checkbox" name="" id="busC2" onclick="verifyBusC()">
+                        </div>
+                        <div class="option">
+                            <span>R3</span>
+                            <input type="checkbox" name="" id="busC3" onclick="verifyBusC()">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="display_enderecos">
-            <div class="display_a">
-                <p>Endereço A</p>
-                <input type="text">
+        <div class="display__inputs">
+            <div class="display__inputA">
+                <div class="box__inputA">
+                    <span>
+                        A
+                    </span>
+                    <input type="number" id="input__displayA"disabled>
+                </div>
             </div>
-            
-            <div class="display_b">
-                <p>Endereço B</p>
-                <input type="text">
+            <div class="select__operation">
+                <div class="operations">
+                    <div class="operations__setionA">
+                        <div class="sum">
+                            <span>+</span>
+                            <input type="checkbox" name="" id="mais" onclick="verifyButtons()" checked>
+                        </div>
+                        <div class="minus">
+                            <span>-</span>
+                            <input type="checkbox" name="" id="menos" onclick="verifyButtons()">
+                        </div>
+                        <div class="multiply">
+                            <span>*</span>
+                            <input type="checkbox" name="" id="vezes" onclick="verifyButtons()"> 
+                        </div>
+                    </div>
+                    <div class="operations__setionB">
+                        <div class="divide">
+                            <input type="checkbox" name="" id="dividir" onclick="verifyButtons()">
+                            <span>/</span>
+                        </div>
+                        <div class="exponential">
+                            <input type="checkbox" name="" id="exponencial" onclick="verifyButtons()">
+                            <span>^</span>
+                        </div>
+                        <div class="module">
+                            <input type="checkbox" name="" id="modulo" onclick="verifyButtons()">
+                            <span>%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="display_c"></div>
+            <div class="display__inputB">
+                <div class="box__inputB">
+                    <span>
+                        B
+                    </span>
+                    <input type="number" id="input__displayB" disabled>
+                </div>
+            </div>
         </div>
-        <div class="bloco_operacoes">
-            <div class="title_bloco">
-                OPERAÇÕES
+        <div class="ula">
+            <div class="inputsAB">
+                <div class="inputA">
+                    <span>A</span>
+                    <input type="number" disabled id="displayA">
+                </div>
+                <div class="inputB">
+                    <span>B</span>
+                    <input type="number" disabled id="displayB">
+                </div>
             </div>
-            <div class="display_operacoes">
-                <div class="resultado_operacoes">
-                    <span>C:</span>
-                    <input type="text">
-                </div>
-                <div class="seletor_operacoes">
-                    <ul>
-                        <li>
-                            <input type="checkbox" name="" id="mais" onclick="updateCheck()">
-                            <span>
-                                +
-                            </span>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="" id="menos" onclick="updateCheck()">
-                            <span>
-                                -
-                            </span>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="" id="vezes" onclick="updateCheck()">
-                            <span>
-                                *
-                            </span>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="dividir" onclick="updateCheck()">
-                            <span>
-                                /
-                            </span>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="" id="exponencial" onclick="updateCheck()">
-                            <span>
-                                ^
-                            </span>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="" id="resto" onclick="updateCheck()">
-                            <span>
-                                %
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="ulaHolder">
+                <h4>ULA</h4>
+            </div>
+            <div class="outputC">
+                <span>C</span>
+                <input type="number" name="" id="input__displayC" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="cache">
+        <div class="values__cache">
+            <div class="valueMemory">
+                <span>0</span>
+                <input name="" id="" disabled class="so">
+            </div>
+            <div class="valueMemory">
+                <span>1</span>
+                <input name="" id="" disabled class="so">
+            </div>
+            <div class="valueMemory">
+                <span>2</span>
+                <input name="" id="" disabled class="so">
+            </div>
+            <div class="valueMemory">
+                <span>3</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>4</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>5</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>6</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>7</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>8</span>
+                <input type="number" name="" id="" disabled class="input__label">
+            </div>
+            <div class="valueMemory">
+                <span>9</span>
+                <input type="number" name="" id="" disabled class="input__label"> 
+            </div>
+            <div class="valueMemory">
+                <span>10</span>
+                <input type="number" name="" id="" disabled class="input__label">
             </div>
         </div>
     </div>
