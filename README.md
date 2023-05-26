@@ -10,22 +10,22 @@ https://caiofuzita.github.io/arquiteturadecopmputadores/
 UTILIZANDO O PROJETO
 ![Getting Started](/imgs/main.png)
 
-1. Podem ser inseridos valores em R0 e R1, apenas na primeira execução do código é algo obrigatório.
+1. Podem ser inseridos valores em R0 e R1, apenas na primeira execução do código é algo obrigatório.  
     ![Getting Started](/imgs/input.png)
   
-2. Após isso, é necessário escolher em busA e busB, quais entradas serão utilizadas, no caso da primeira execução, devemos utilizar R0 e R1.
+2. Após isso, é necessário escolher em busA e busB, quais entradas serão utilizadas, no caso da primeira execução, devemos utilizar R0 e R1.  
     ![Getting Started](/imgs/busA-B.png)
   
-3. Em busC, escolhemos onde o resultado será armazenado.
+3. Em busC, escolhemos onde o resultado será armazenado.  
     ![Getting Started](/imgs/busA-C.png)
   
-4. Logo abaixo, veremos as entradas selecionadas em A e B, em conjunto com os operadores aritméticos. Por padrão, a operação de adição já vem selecionada, mas pode ser trocada.
+4. Logo abaixo, veremos as entradas selecionadas em A e B, em conjunto com os operadores aritméticos. Por padrão, a operação de adição já vem selecionada, mas pode ser trocada.  
     ![Getting Started](/imgs/display.png)
   
-5. Abaixo temos mais um display mostrando os valores de A e B, o resultado da operação pode ser observado em C
+5. Abaixo temos mais um display mostrando os valores de A e B, o resultado da operação pode ser observado em C  
     ![Getting Started](/imgs/display.png)
   
-6. Os valores são alterados no primeiro display de input, e também adicionados na memória cache. Quando a memória cache fica cheia, os valores começam a se sobrepor.
+6. Os valores são alterados no primeiro display de input, e também adicionados na memória cache. Quando a memória cache fica cheia, os valores começam a se sobrepor.  
     ![Getting Started](/imgs/input.png)
       
     ![Getting Started](/imgs/cache.png)
