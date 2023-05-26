@@ -17,7 +17,7 @@ UTILIZANDO O PROJETO
     ![Getting Started](/imgs/busA-B.png)
   
 3. Em busC, escolhemos onde o resultado será armazenado.  
-    ![Getting Started](/imgs/busA-C.png)
+    ![Getting Started](/imgs/busC.png)
   
 4. Logo abaixo, veremos as entradas selecionadas em A e B, em conjunto com os operadores aritméticos. Por padrão, a operação de adição já vem selecionada, mas pode ser trocada.  
     ![Getting Started](/imgs/display.png)
